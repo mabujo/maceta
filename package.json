@@ -1,0 +1,29 @@
+{
+  "name": "maceta",
+  "version": "0.0.1",
+  "description": "Reactive multimedia framework",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mabujo/maceta.git"
+  },
+  "author": "John Henson",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mabujo/maceta/issues"
+  },
+  "homepage": "https://github.com/mabujo/maceta#readme",
+  "devDependencies": {
+    "@babel/core": "^7.4.5",
+    "@babel/plugin-proposal-object-rest-spread": "^7.4.4",
+    "@babel/preset-env": "^7.4.5",
+    "babel-loader": "^8.0.6",
+    "prettier": "^1.17.1",
+    "webpack": "^4.32.2",
+    "webpack-cli": "^3.3.2",
+    "webpack-dev-server": "^3.5.1"
+  }
+}
