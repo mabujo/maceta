@@ -1,0 +1,26 @@
+{
+  "name": "maceta-renderers-pixi",
+  "version": "1.0.0",
+  "description": "Maceta pixi.js renderer",
+  "author": "John Henson <contact@mabujo.com>",
+  "homepage": "https://github.com/mabujo/maceta/tree/master/packages/maceta-renderers-pixi#readme",
+  "license": "MIT",
+  "main": "src/maceta-renderers-pixi.js",
+  "directories": {
+    "src": "src",
+    "test": "__tests__"
+  },
+  "files": [
+    "src"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mabujo/maceta.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: run tests from root\" && exit 1"
+  },
+  "bugs": {
+    "url": "https://github.com/mabujo/maceta/issues"
+  }
+}

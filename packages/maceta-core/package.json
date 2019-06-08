@@ -1,0 +1,26 @@
+{
+  "name": "maceta-core",
+  "version": "1.0.0",
+  "description": "Core lib of maceta ",
+  "author": "John Henson <contact@mabujo.com>",
+  "homepage": "https://github.com/mabujo/maceta/tree/master/packages/maceta-core#readme",
+  "license": "MIT",
+  "main": "src/maceta-core.js",
+  "directories": {
+    "src": "src",
+    "test": "__tests__"
+  },
+  "files": [
+    "src"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mabujo/maceta.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: run tests from root\" && exit 1"
+  },
+  "bugs": {
+    "url": "https://github.com/mabujo/maceta/issues"
+  }
+}

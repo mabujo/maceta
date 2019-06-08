@@ -1,0 +1,26 @@
+{
+  "name": "maceta-reactive",
+  "version": "1.0.0",
+  "description": "Maceta utilities for reacting to state",
+  "author": "John Henson <contact@mabujo.com>",
+  "homepage": "https://github.com/mabujo/maceta/tree/master/packages/maceta-reactive#readme",
+  "license": "MIT",
+  "main": "src/maceta-reactive.js",
+  "directories": {
+    "lib": "lib",
+    "test": "__tests__"
+  },
+  "files": [
+    "lib"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mabujo/maceta.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: run tests from root\" && exit 1"
+  },
+  "bugs": {
+    "url": "https://github.com/mabujo/maceta/issues"
+  }
+}
