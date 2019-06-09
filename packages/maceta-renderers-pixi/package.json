@@ -18,9 +18,21 @@
     "url": "git+https://github.com/mabujo/maceta.git"
   },
   "scripts": {
-    "test": "echo \"Error: run tests from root\" && exit 1"
+    "test": "echo \"Error: run tests from root\" && exit 0"
   },
   "bugs": {
     "url": "https://github.com/mabujo/maceta/issues"
+  },
+  "peerDependencies": {
+    "@pixi/core": "^5.0.4",
+    "@pixi/display": "^5.0.4",
+    "@pixi/extract": "^5.0.4",
+    "@pixi/graphics": "^5.0.4",
+    "@pixi/interaction": "^5.0.4",
+    "@pixi/math": "^5.0.4",
+    "@pixi/prepare": "^5.0.4",
+    "@pixi/sprite": "^5.0.4",
+    "@pixi/text": "^5.0.4",
+    "@pixi/utils": "^5.0.4"
   }
 }
