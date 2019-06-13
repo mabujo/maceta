@@ -5,6 +5,7 @@
   "main": "src/index.js",
   "scripts": {
     "build": "npm run test",
+    "build-ci": "npm test -- --ci",
     "postinstall": "lerna bootstrap --hoist",
     "test": "jest"
   },
