@@ -18,13 +18,9 @@
     "url": "git+https://github.com/mabujo/maceta.git"
   },
   "scripts": {
-    "test": "jest"
+    "test": "echo \"Error: run tests from root\" && exit 0"
   },
   "bugs": {
     "url": "https://github.com/mabujo/maceta/issues"
-  },
-  "devDependencies": {
-    "jest": "^24.8.0",
-    "jest-extended": "^0.11.1"
   }
 }

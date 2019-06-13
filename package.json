@@ -4,6 +4,8 @@
   "description": "Reactive multimedia framework",
   "main": "src/index.js",
   "scripts": {
+    "build": "npm run test",
+    "postinstall": "lerna bootstrap --hoist",
     "test": "jest"
   },
   "repository": {
@@ -22,27 +24,18 @@
     "@babel/preset-env": "^7.4.5",
     "babel-eslint": "^10.0.1",
     "babel-jest": "^24.8.0",
-    "babel-loader": "^8.0.6",
     "eslint": "^5.16.0",
-    "eslint-config-airbnb": "^17.1.0",
     "eslint-config-airbnb-base": "^13.1.0",
     "eslint-config-prettier": "^4.3.0",
     "eslint-plugin-import": "^2.17.3",
     "eslint-plugin-jsx-a11y": "^6.2.1",
     "eslint-plugin-prettier": "^3.1.0",
     "husky": "^2.4.0",
+    "jasmine-check": "^1.0.0-rc.0",
     "jest": "^24.8.0",
     "jest-extended": "^0.11.1",
     "lerna": "^3.14.1",
-    "prettier": "^1.18.2",
-    "webpack": "^4.33.0",
-    "webpack-cli": "^3.3.3",
-    "webpack-dev-server": "^3.7.1"
-  },
-  "dependencies": {
-    "maceta-core": "file:packages\\maceta-core",
-    "maceta-reactive": "file:packages\\maceta-reactive",
-    "maceta-renderers-pixi": "file:packages\\maceta-renderers-pixi"
+    "prettier": "^1.18.2"
   },
   "jest": {
     "transform": {
