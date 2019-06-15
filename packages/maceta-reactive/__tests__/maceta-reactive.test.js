@@ -12,7 +12,16 @@ describe('when checking if a variable is an object', () => {
     expect(isObject(testObj)).toBeTruthy();
     expect(isObject(testObjConstructor)).toBeTruthy();
   });
-  check.it('returns false when passed an array', gen.array, arrays => {
+  it('should return false when passed a function', () => {
+    const testFn = function(params) {
+      return params;
+    };
+    expect(isObject(testFn)).toBeFalsy();
+  });
+  check.it('returns true when passed an object', gen.object(gen.any, { size: 50 }), testObjects => {
+    expect(isObject(testObjects)).toBeTruthy();
+  });
+  check.it('returns false when passed an array', gen.array(gen.any, { size: 30 }), arrays => {
     expect(isObject(arrays)).toBeFalsy();
   });
   check.it('returns false when passed a number', gen.number, numbers => {

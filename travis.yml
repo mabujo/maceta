@@ -1,5 +1,11 @@
 language: node_js
 
+os:
+  - linux
+  - osx
+
+dist: trusty
+
 node_js:
   - '12'
   - '10'
@@ -7,5 +13,12 @@ node_js:
 
 install: npm ci
 
+addons:
+  sonarcloud:
+    organization: 'cosecha'
+    token:
+      secure: 'cqpxtiKGxoVXlC6X+2JiZGMnBe72c1Ql8jHdg8cytTfjUp7BNuUtYZB33PoOzvlyFigz8o648T8tSI7QqQW+IVZEBJavIWgGi4Z/+tEyGm/aPPS8QeBIyE0wd1GN41/jlQdSeofcbsD5n7SQBZK61JyPEoP1HtI5xw1jitFdAhLyJb/P1dzZN/JZjUZj128NhJ9HaVOR71NOT7oqhsqGFrbYzp7bTrjPu5ahnMAin5M0eFgomS+5SINs324yUkOlebbPgkFWdbPxYEuQrugq0sDWE/TLixl3v/cTwJ1RRUdXSRmwwFCyrK1t9BbV20mASGU4vPLCM7GH75uZcCQk3GyBGZCRb/EmpaA1osKSgriCoDr0xd4dZJDnVHgWZofeOyVAKxTYAO82nc73W2779XnSPDypJdbxqachH82FJrt0EOsQu8Rr5ChEM7Sg4H0NkvNiygNZfMoc0BAMvE7LHzqOZdtTKY6uG/S0cjHyBIcf8AM9sg6JPQWyCkcdpsI4dFhlrSLsiiMU70lhQjW9yBYXKQXBCrCxvCnMmDJ6H5KJuoSkLmBSwvG5ubNq+FedTRHieRXY6LIxQbz4I8bViM+C1hb9cXKrhw//Z2F84akg+NxBaYl1cd0JSvbJM612g1Q3kPV2A8kqj+cJM5asGJ02QPZ2LQmf4WTMZcPM0Mk='
+
 script:
   - npm run build-ci
+  - sonar-scanner

@@ -5,7 +5,12 @@ export const CHANGE_TYPES = {
   REMOVE: 'remove'
 };
 
-export const isObject = o => o instanceof Object && o.constructor === Object;
+/**
+ * Tests if passed parameter is a true object
+ * @param     {*}         item    The item to check
+ * @returns   {boolean}           If this is an object
+ */
+export const isObject = item => item instanceof Object && item.constructor === Object;
 
 export const getChangeObject = ({ target, key, value, type }) => {
   const changeObject = {
