@@ -41,6 +41,7 @@
   "jest": {
     "transform": {
       "^.+\\.js?$": "babel-jest"
-    }
+    },
+    "collectCoverage": true
   }
 }
