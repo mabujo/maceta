@@ -1,5 +1,5 @@
 {
-  "extends": ["airbnb", "plugin:prettier/recommended"],
+  "extends": ["airbnb-base", "plugin:prettier/recommended"],
   "env": {
     "browser": true,
     "commonjs": true,
@@ -22,5 +22,9 @@
         "ignoreRegExpLiterals": true
       }
     ]
+  },
+  "globals": {
+    "check": true,
+    "gen": true
   }
 }

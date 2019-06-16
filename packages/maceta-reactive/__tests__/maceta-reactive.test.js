@@ -1,3 +1,4 @@
+// eslint-disable-next-line import/no-extraneous-dependencies
 import { install } from 'jasmine-check';
 
 import { isObject } from '../src/maceta-reactive';
@@ -8,23 +9,24 @@ install();
 describe('when checking if a variable is an object', () => {
   it('should return true when passed an object', () => {
     const testObj = {};
+    // eslint-disable-next-line no-new-object
     const testObjConstructor = new Object();
     expect(isObject(testObj)).toBeTruthy();
     expect(isObject(testObjConstructor)).toBeTruthy();
   });
   it('should return false when passed a function', () => {
-    const testFn = function(params) {
+    const testFn = function testFn(params) {
       return params;
     };
     expect(isObject(testFn)).toBeFalsy();
   });
-  check.it('returns true when passed an object', gen.object(gen.any, { size: 50 }), testObjects => {
+  check.it('returns true when passed an object', { times: 10 }, gen.object(gen.any), testObjects => {
     expect(isObject(testObjects)).toBeTruthy();
   });
-  check.it('returns false when passed an array', gen.array(gen.any, { size: 30 }), arrays => {
+  check.it('returns false when passed an array', { times: 10 }, gen.array(gen.any), arrays => {
     expect(isObject(arrays)).toBeFalsy();
   });
-  check.it('returns false when passed a number', gen.number, numbers => {
+  check.it('returns false when passed a number', { times: 10 }, gen.number, numbers => {
     expect(isObject(numbers)).toBeFalsy();
   });
 });
