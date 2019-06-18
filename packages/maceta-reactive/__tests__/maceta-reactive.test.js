@@ -1,7 +1,7 @@
 // eslint-disable-next-line import/no-extraneous-dependencies
 import { install } from 'jasmine-check';
 
-import { isObject } from '../src/maceta-reactive';
+import { isObject, observe } from '../src/maceta-reactive';
 
 // install testcheck utils to global scope
 install();
@@ -28,5 +28,16 @@ describe('when checking if a variable is an object', () => {
   });
   check.it('returns false when passed a number', { times: 10 }, gen.number, numbers => {
     expect(isObject(numbers)).toBeFalsy();
+  });
+});
+
+describe('when calling to observe', () => {
+  it('should call function on change', () => {
+    const testObj = {};
+    const testFn = jest.fn();
+    const observable = observe({ object: testObj, fn: testFn });
+    observable.a = 1;
+    observable.a = 2;
+    expect(testFn).toHaveBeenCalledTimes(2);
   });
 });

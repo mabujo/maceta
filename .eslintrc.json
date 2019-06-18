@@ -21,7 +21,8 @@
         "ignoreTemplateLiterals": true,
         "ignoreRegExpLiterals": true
       }
-    ]
+    ],
+    "no-underscore-dangle": 0
   },
   "globals": {
     "check": true,
