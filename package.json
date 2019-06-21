@@ -37,16 +37,5 @@
     "jest-extended": "^0.11.1",
     "lerna": "^3.14.1",
     "prettier": "^1.18.2"
-  },
-  "jest": {
-    "transform": {
-      "^.+\\.js?$": "babel-jest"
-    },
-    "collectCoverage": true,
-    "collectCoverageFrom": [
-      "packages/**/*.{js,jsx}",
-      "src/**/*.{js,jsx}",
-      "!**/node_modules/**"
-    ]
   }
 }
