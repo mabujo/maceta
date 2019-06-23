@@ -1,5 +1,3 @@
-'use strict';
-
 const macetaRenderersPixi = require('..');
 
 describe('maceta-renderers-pixi', () => {

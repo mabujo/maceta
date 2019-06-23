@@ -6,6 +6,7 @@
   "scripts": {
     "build": "npm run test",
     "build-ci": "npm test -- --ci",
+    "lint": "eslint --fix ./packages",
     "postinstall": "lerna bootstrap --hoist",
     "test": "jest"
   },
@@ -37,5 +38,8 @@
     "jest-extended": "^0.11.1",
     "lerna": "^3.14.1",
     "prettier": "^1.18.2"
+  },
+  "dependencies": {
+    "@types/jest": "^24.0.15"
   }
 }
