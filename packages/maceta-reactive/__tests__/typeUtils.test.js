@@ -1,11 +1,41 @@
 // eslint-disable-next-line import/no-extraneous-dependencies
 import { install } from 'jasmine-check';
 
-import { getSupportedType, isFunction, isObject, isString } from '../src/typeUtils';
+import { getSupportedType, getType, isFunction, isObject, isString } from '../src/typeUtils';
 import { OBSERVABLE_TYPES } from '../src/CONSTANTS';
 
 // install testcheck utils to global scope
 install();
+
+describe('when calling to getType', () => {
+  it('should return false when passed null', () => {
+    const type = getType(null);
+    expect(type).toBeEmpty();
+    expect(type).toBeString();
+  });
+  it('should return false when passed undefined', () => {
+    const type = getType(undefined);
+    expect(type).toBeEmpty();
+    expect(type).toBeString();
+  });
+  it('should return false when passed a boolean', () => {
+    const type = getType(true);
+    expect(type).toBeEmpty();
+    expect(type).toBeString();
+  });
+  it('should return Object passed an object', () => {
+    const testObjectType = getType({ a: 'a', b: 'b', c: 'c' });
+    expect(testObjectType).toBe(OBSERVABLE_TYPES.OBJECT);
+  });
+  it('should return Array when passed an array', () => {
+    const testObjectType = getType(['a', 'b', 'c']);
+    expect(testObjectType).toBe(OBSERVABLE_TYPES.ARRAY);
+  });
+  it('should return String when passed a string', () => {
+    const testObjectType = getType('abc');
+    expect(testObjectType).toBe(OBSERVABLE_TYPES.STRING);
+  });
+});
 
 describe('when calling to getSupportedType', () => {
   it('should return false when passed null', () => {

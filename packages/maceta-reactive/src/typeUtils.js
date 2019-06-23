@@ -1,4 +1,4 @@
-import { OBSERVABLE_TYPES } from './CONSTANTS';
+import { OBSERVABLE_TYPES, PROXYABLE_TYPES } from './CONSTANTS';
 
 /**
  * Tests if passed parameter is a true object
@@ -26,26 +26,46 @@ export const isFunction = item => item instanceof Function;
  * @returns   {boolean}           If the item is a string
  * @example
  * const str = 'a1';
- * isObject(str): // returns true
+ * isString(str): // returns true
  */
 export const isString = item => typeof item === 'string' || item instanceof String;
 
 /**
+ * Gets the type of a variable
+ * @param     {*}         item    Item to be type-checked
+ * @returns   {string}            The type or an empty string
+ * @example
+ * getType('hello world'); // returns 'String'.
+ */
+export const getType = item => {
+  if (isObject(item)) {
+    return OBSERVABLE_TYPES.OBJECT;
+  }
+  if (Array.isArray(item)) {
+    return OBSERVABLE_TYPES.ARRAY;
+  }
+  if (isString(item)) {
+    return OBSERVABLE_TYPES.STRING;
+  }
+  return '';
+};
+
+/**
  * Tests if passed parameter can be made observable
  * @param     {*}         item    The item to check
- * @returns   {{proxyable: boolean, type: string}}    An object defining support
+ * @returns   {{proxyable: boolean, type: string} | false}    An object defining support
  * @example
  * getSupportedType({ a: 1 }); // returns { proxyable: true, type: 'Object' }
  */
 export const getSupportedType = item => {
-  if (isObject(item)) {
-    return { proxyable: true, type: OBSERVABLE_TYPES.OBJECT };
+  const type = getType(item);
+
+  if (Object.values(OBSERVABLE_TYPES).includes(type)) {
+    return {
+      proxyable: PROXYABLE_TYPES.includes(type),
+      type
+    };
   }
-  if (Array.isArray(item)) {
-    return { proxyable: true, type: OBSERVABLE_TYPES.ARRAY };
-  }
-  if (isString(item)) {
-    return { proxyable: false, type: OBSERVABLE_TYPES.STRING };
-  }
+
   return false;
 };

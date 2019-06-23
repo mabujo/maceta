@@ -1,6 +1,6 @@
 /* eslint-disable no-param-reassign */
-import { CHANGE_TYPES } from './CONSTANTS';
-import { getSupportedType, isFunction, isObject } from './typeUtils';
+import { CHANGE_TYPES, PROXYABLE_TYPES } from './CONSTANTS';
+import { getSupportedType, isFunction, isObject, getType } from './typeUtils';
 
 const _getChangeObject = ({ target, key, value, type }) => {
   const changeObject = {
@@ -134,7 +134,7 @@ export const observable = (item, { parent, originalName } = {}) => {
 // e.g. reaction({something: test}, (...params) => { console.log(params)})
 export const reaction = (trackedObservables, reactFunction) => {
   if (isFunction(reactFunction)) {
-    if (isObject(trackedObservables)) {
+    if (PROXYABLE_TYPES.includes(getType(trackedObservables))) {
       if ('_macetaIsReactive' in trackedObservables) {
         trackedObservables._macetaObserversId += 1;
         const thisObserverId = trackedObservables._macetaObserversId;
